@@ -34,7 +34,7 @@ module.exports = function setupGps (GpsModel ) {
   }
 
   async function findLast () {
-    return MetricModel.findAll({
+    return GpsModel.findAll({
       limit: 5,
       order: [[ 'id', 'DESC' ]],
       raw: true
