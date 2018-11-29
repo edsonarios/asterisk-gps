@@ -27,8 +27,18 @@ module.exports = function setupGps (GpsModel ) {
     })
   }
 
-  function findAll(){
-    return GpsModel.findAll()
+  async function findAll () {
+    return GpsModel.findAll({
+      order: [[ 'id', 'ASC' ]]
+    })
+  }
+
+  async function findLast () {
+    return MetricModel.findAll({
+      limit: 5,
+      order: [[ 'id', 'DESC' ]],
+      raw: true
+    })
   }
 
   async function deleteOne(id){ 
@@ -44,6 +54,7 @@ module.exports = function setupGps (GpsModel ) {
     update,
     findOne,
     findAll,
+    findLast,
     deleteOne
   }
 }
