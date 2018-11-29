@@ -7,6 +7,10 @@ module.exports = function setupGpsModel (config) {
   const sequelize = setupDatabase(config)
 
   return sequelize.define('gps', {
+    user: {
+      type: Sequelize.STRING,
+      allowNull: true
+    },
     direccion: {
       type: Sequelize.STRING,
       allowNull: true
