@@ -29,7 +29,7 @@ async function setup () {
     database: process.env.DB_NAME || 'gpsdb',
     username: process.env.DB_USER || 'gpsdb',
     password: process.env.DB_PASS || 'gpsdb',
-    host: process.env.DB_HOST || '192.168.0.18',
+    host: process.env.DB_HOST || 'localhost',
     dialect: 'postgres',
     logging: s => debug(s),
     setup: true
