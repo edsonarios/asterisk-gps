@@ -64,5 +64,14 @@ api.get('/gpsFindLast',async (req,res)=>{
   
 })
 
+api.get('/gpsDeleteAll',async (req,res)=>{
+  //añade un nuevo usuario
+  
+  const Objeto = await Gps.deleteAll()
+  
+  res.send(Objeto)
+  
+})
+
 
 module.exports = api

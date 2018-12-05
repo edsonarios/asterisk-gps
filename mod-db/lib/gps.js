@@ -41,12 +41,8 @@ module.exports = function setupGps (GpsModel ) {
     })
   }
 
-  async function deleteOne(id){ 
-    return await GpsModel.destroy({
-      where:{ 
-        id: id
-      }
-    })
+  async function deleteAll(){ 
+    return await GpsModel.destroy()
   }
 
   return {
@@ -55,7 +51,7 @@ module.exports = function setupGps (GpsModel ) {
     findOne,
     findAll,
     findLast,
-    deleteOne
+    deleteAll
   }
 }
 
