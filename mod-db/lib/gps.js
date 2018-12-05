@@ -42,7 +42,10 @@ module.exports = function setupGps (GpsModel ) {
   }
 
   async function deleteAll(){ 
-    return await GpsModel.destroy()
+    return await GpsModel.destroy({
+      where:{},
+      truncate: true
+    })
   }
 
   return {
